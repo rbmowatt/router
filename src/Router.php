@@ -15,16 +15,14 @@ class Router implements RouterInterface {
 
     /**
      * Registers a resource controller with the Router
-     * Obviously there are a number of ways we can store the routes/paths but in the interest of simoplicity
-     * I have just created a singleton to house them 
+     * 
+     * Let's have the Routes Object dice em and store them
      * 
      * @param string $path
      * @return null
      */
     public static function resource( string $path )  : void
     {
-        //lets stash our routes somewhere
-        //normally we might cache them in a file or something
         Routes::getInstance()->addRoute(self::toController($path), explode('.', $path));
     }
 
@@ -102,7 +100,7 @@ class Router implements RouterInterface {
                 case 'DELETE':
                     return call_user_func_array( array($controller, 'delete'), $params);
                 default:
-                    throw new Exception('Invalid Request Method');
+                    throw new RouterException('Invalid Request Method');
             }
         }
         catch( Exception $e){
