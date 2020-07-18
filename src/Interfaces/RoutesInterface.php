@@ -2,7 +2,7 @@
 
 interface RoutesInterface {
 
-    public function addRoute( string $controller, string $route) : void;
+    public function addRoute( string $controller, array $route) : void;
     
     public function getRoutes() : array;
 

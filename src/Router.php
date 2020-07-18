@@ -25,7 +25,7 @@ class Router implements RouterInterface {
     {
         //lets stash our routes somewhere
         //normally we might cache them in a file or something
-        Routes::getInstance()->addRoute(self::toController($path), self::createRegex(explode('.', $path)));
+        Routes::getInstance()->addRoute(self::toController($path), explode('.', $path));
     }
 
     /**
@@ -123,27 +123,7 @@ class Router implements RouterInterface {
         );
         return $controllerName . 'Controller';
     }
-    /**
-     * We want to create a regex for each controller/path that will match either [/entity] or [/entity/value]
-     * We wil also keep every set of regex under a key mapping the applicable controller
-     * 
-     * @param array $params
-     * @return string
-     */
-    protected static function createRegex(array $params) : string
-    {
-        if(count($params) === 1 ){ //this is not a nested route so lets make this easy
-            $template = "~^(?:/param | /param/(\d+))$~x";
-            return str_replace('param', $params[0], $template);
-        }
-        //else this is a nested route so we have to loop through our parts and build a more etailed regex
-        $argsMatch = '';
-        foreach($params as $param){
-            $argsMatch .= "/$param/(\d+)";
-        }
-        $exactMatch = rtrim($argsMatch, '/(\d+)');
-        return "~^(?:$exactMatch | $argsMatch )$~x";
-    }
+
 
      /**
      * @throws Exception
