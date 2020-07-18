@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "cfd2c2bc-c760-4c7d-8335-77af137eccf9",
+		"name": "RbMowatt Router",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Nested GET [get] Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/patients/1/metrics/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1",
+						"metrics",
+						"2"
+					]
+				},
+				"description": "Nested GET [get] Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Non-Nested GET [get] Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/patients/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1"
+					]
+				},
+				"description": "Non-Nested GET [get] Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Nested GET [index] Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/patients/1/metrics",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1",
+						"metrics"
+					]
+				},
+				"description": "Nested GET [index ] Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Non-Nested GET [index] Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/patients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients"
+					]
+				},
+				"description": "Non-Nested GET [index] Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Nested PATCH Request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key_1",
+							"value": "val_1",
+							"type": "text"
+						},
+						{
+							"key": "key_2",
+							"value": "val_2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/patients/1/metrics/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1",
+						"metrics",
+						"2"
+					]
+				},
+				"description": "Nested PATCH Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Non-Nested PATCH Request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key_1",
+							"value": "val_1",
+							"type": "text"
+						},
+						{
+							"key": "key_2",
+							"value": "val_2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/patients/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1"
+					]
+				},
+				"description": "Non-Nested PATCH Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Nested POST Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key_1",
+							"value": "val_1",
+							"type": "text"
+						},
+						{
+							"key": "key_2",
+							"value": "val_2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/patients/1/metrics",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1",
+						"metrics"
+					]
+				},
+				"description": "Nested POST Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Non-Nested POST Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key_1",
+							"value": "val_1",
+							"type": "text"
+						},
+						{
+							"key": "key_2",
+							"value": "val_2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/patients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients"
+					]
+				},
+				"description": "Non-Nested POST Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Nested DELETE  Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/patients/1/metrics/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1",
+						"metrics",
+						"2"
+					]
+				},
+				"description": "Nested DELETE  Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Non-Nested DELETE  Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/patients/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"patients",
+						"1"
+					]
+				},
+				"description": "Non-Nested DELETE  Request"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b822786c-57f1-4906-9520-396f6243be11",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2ff65049-dab2-414f-a98d-4885a24b0d64",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b1463e7e-8a12-43f2-aa33-0ecf5784530c",
+			"key": "url",
+			"value": "http://192.168.99.101:8080"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

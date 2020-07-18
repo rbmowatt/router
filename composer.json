@@ -1,0 +1,25 @@
+{
+    "name":"rbmowatt/router",
+    "description":"A simple php router....",
+    "license":"MIT",
+    "keywords":[
+        "router"
+    ],
+    "authors":[
+        {
+            "name":"Richard Mowatt",
+            "email":"richmowatt@gmail.com"
+        }
+    ],
+    "require":{
+        "php": "7.*"
+    },
+    "require-dev":{
+        "phpunit/phpunit":"7.0.*"
+    },
+    "autoload":{
+        "psr-4":{
+            "RbMowatt\\Router\\":"src"
+        }
+    }
+}
