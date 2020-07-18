@@ -3,6 +3,12 @@
 ## RbMowatt Router
 An example PHP router with example and easy Docker setup.
 
+## Directories
+- `src` - hold the actual code applicable to router functionality
+- `tests` - where the tests reside
+- `docker` - the files to build our dockr container and add local code as volume
+- `example` - implementation of simple example
+
 ## Usage
 - Register new route < nesting based on `.` delimitation > 
 	- `Router::resource('patients');`
@@ -21,7 +27,7 @@ An example PHP router with example and easy Docker setup.
 		- `DELETE` = `delete(id)`
 	- In the case of Nested Routes the arguments passed to each method will equal the number of variables in the url
 		- Example `GET /patients/1/metrics/2`
-			- results in `index(id_1, id_2)`
+			- results in `get(id_1, id_2)`
 		- Example `POST /patients/1/metrics/`
 			- results in `create(id_1, body)`
 	- `POST and PATCH` always receive the body params array as the last parameter	

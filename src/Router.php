@@ -84,16 +84,15 @@ class Router implements RouterInterface {
             switch ($_SERVER['REQUEST_METHOD']) {
                 case 'PUT':
                 case 'PATCH':
-                    $data = $this->parseBody();
                     //we'll make the request data the final param here
-                    array_push($params, $data);
+                    array_push($params, $this->parseBody());
                     return call_user_func_array( array($controller, 'update'), $params);
                 case 'POST':
                     //lets parse the body and send it as a param
                     array_push($params, $this->parseBody());
                     return call_user_func_array( array($controller, 'create'), $params);
                 case 'GET':
-                    //if the url can be split into an even number of sections that means there is an argument for each directive and hence its an index call
+                    //if the url can be split into an even number of sections that means there is an argument for each directive and hence its a get call
                     //otherwise it should be directed to the get method
                     $method = $totalParts % 2 ?  'index' : 'get';
                     return call_user_func_array( array($controller, $method), $params);
@@ -104,7 +103,7 @@ class Router implements RouterInterface {
             }
         }
         catch( Exception $e){
-            return  new RouterException('ng');
+            return  new RouterException($e->getMessage());
         }
     }
     /**
@@ -147,6 +146,6 @@ class Router implements RouterInterface {
      * @throws Exception
      */
     protected function pageNotFound(){
-        throw new Exception('Page Not Found');
+        throw new RouterException('Page Not Found');
     }
 }
