@@ -1,7 +1,7 @@
 
 
 ## RbMowatt Router
-An example PHP router with example and easy Docker setup.
+A PHP router with tests, working example and easy Docker setup.
 
 ## Directories
 - `src` - hold the actual code applicable to router functionality
