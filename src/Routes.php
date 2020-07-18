@@ -1,7 +1,8 @@
 <?
 namespace RbMowatt\Router;
+use RbMowatt\Router\Interfaces\RoutesInterface;
 
-class Routes {
+class Routes implements RoutesInterface {
 
   private $routes = [];
 
@@ -16,7 +17,7 @@ class Routes {
     return self::$instance;
   }
 
-  public function addRoute( string $controller, string $route){
+  public function addRoute( string $controller, string $route) : void {
       $this->routes[$controller] = $route;
   }
 

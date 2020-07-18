@@ -21,7 +21,7 @@ class Router implements RouterInterface {
      * @param string $path
      * @return null
      */
-    public static function resource( string $path )  
+    public static function resource( string $path )  : void
     {
         //lets stash our routes somewhere
         //normally we might cache them in a file or something
@@ -148,7 +148,8 @@ class Router implements RouterInterface {
      /**
      * @throws Exception
      */
-    protected function pageNotFound(){
+    protected function pageNotFound()
+    {
         throw new RouterException('Page Not Found');
     }
 }

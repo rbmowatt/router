@@ -8,7 +8,7 @@ interface RouterInterface {
      * @param string $path
      * @return null
      */
-    public static function resource( string $path );
+    public static function resource( string $path ) : void;
 
     /**
      * 
