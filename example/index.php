@@ -8,4 +8,10 @@ use RbMowatt\Router\Router;
 Router::resource('patients');
 Router::resource('patients.metrics');
 $router = new Router;
-print_r($router->dispatch($_SERVER['REQUEST_URI']));
+try{
+    echo $router->dispatch($_SERVER['REQUEST_URI']);
+}
+catch(Exception $e)
+{
+    echo $e->getMessage();
+}

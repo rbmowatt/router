@@ -40,7 +40,10 @@ class Router implements RouterInterface {
             //the total number of sections the url is divided into based on '/' delimiter
             $totalParts = count(array_filter(explode('/', $path)));
             //lets see if we can find a route match 
-            $match =  $this->_routes->match(rtrim($path, '/'));
+            if(!$match =  $this->_routes->match(rtrim($path, '/')))
+            {
+                throw new RouterException('Route Does Not Exist');
+            }
             //if we can lets send the result to a method which will apply the result based on request method
             if(class_exists($match['controller']))
             {
@@ -78,7 +81,7 @@ class Router implements RouterInterface {
      * @param int $totalParts
      * @return mixed
      */
-    protected function apply( $controller, $params, $totalParts)
+    protected function apply( $controller, array $params, int $totalParts)
     {
         try {
             switch ($_SERVER['REQUEST_METHOD']) {
